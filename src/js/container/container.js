@@ -1,19 +1,24 @@
-import { catalogMarkup } from "../catalog/catalog";
+import { catalogMarkup } from "../catalog/catalogMarkup";
+import {
+  addEventListeners,
+  getFavorites,
+  showFavorites,
+} from "../catalog/favorites";
 import { refs } from "../components/refs";
 
-const containerHeaderMarkup = function () {
+const containerHeaderMarkup = () => {
   return `
     <header class="header-wrapper"><h2>Header</h2></header>
     `;
 };
 
-const containerFooterMarkup = function () {
+const containerFooterMarkup = () => {
   return `
     <footer class="footer-wrapper"><h2>Footer</h2></footer>
     `;
 };
 
-const containerSectionsMarkup = function () {
+const containerSectionsMarkup = () => {
   return `
     <div class="catalog-wrapper">${catalogMarkup()}</div>
     `;
@@ -22,5 +27,8 @@ const containerSectionsMarkup = function () {
 export const containerHandler = () => {
   refs.container.insertAdjacentHTML("afterbegin", containerHeaderMarkup());
   refs.container.insertAdjacentHTML("beforeend", containerFooterMarkup());
+  getFavorites();
   refs.sections.innerHTML = containerSectionsMarkup();
+  showFavorites();
+  addEventListeners();
 };
