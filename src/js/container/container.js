@@ -1,10 +1,10 @@
 import { catalogMarkup } from "../catalog/catalogMarkup";
-import { refs } from "../components/refs";
 import {
   addEventListeners,
   getFavorites,
   showFavorites,
-} from "../storage/storage";
+} from "../catalog/favorites";
+import { refs } from "../components/refs";
 
 const containerHeaderMarkup = () => {
   return `
