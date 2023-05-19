@@ -1,4 +1,4 @@
 export default {
   allProducts: [],
-  currentProducts: [],
+  favoriteProducts: [],
 };

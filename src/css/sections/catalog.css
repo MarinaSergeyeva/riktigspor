@@ -56,6 +56,11 @@
   position: absolute;
   top: 20px;
   right: 40px;
+  display: none;
+}
+
+.active {
+  display: block;
 }
 
 .catalog__item:hover {
