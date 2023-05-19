@@ -17,29 +17,53 @@ export const showFavorites = () => {
 
     if (favorites.includes(id)) {
       const elem = document.getElementById(`favorite__icon-${id}`);
+      const btnText = document.querySelector(`[data-id='${product.id}']`);
+
       elem.classList.add("active");
+      btnText.innerHTML = "Remove from favorite";
     }
   });
 };
 
-export const addFavoriteItem = (e) => {
-  if (e.target.nodeName === "BUTTON") {
-    const id = Number(e.target.dataset.id);
+export const toggleFavorite = (e) => {
+  const id = Number(e.target.dataset.id);
+  const isFavorite = userData.favoriteProducts.includes(id);
+  const elem = document.getElementById(`favorite__icon-${id}`);
+  const btnText = document.querySelector(`[data-id='${id}']`);
 
-    const elem = document.getElementById(`favorite__icon-${id}`);
+  // ADDING ITEM TO FAVORITES //
+
+  if (e.target.nodeName === "BUTTON" && !isFavorite) {
     elem.classList.add("active");
 
-    if (!userData.favoriteProducts.includes(id)) {
-      userData.favoriteProducts = [...userData.favoriteProducts, id];
-      localStorage.setItem(
-        "favorites",
-        JSON.stringify(userData.favoriteProducts)
-      );
-    }
+    userData.favoriteProducts = [...userData.favoriteProducts, id];
+    localStorage.setItem(
+      "favorites",
+      JSON.stringify(userData.favoriteProducts)
+    );
+
+    btnText.innerHTML = "Remove from favorite";
+  }
+
+  // REMOVING ITEM FROM FAVORITES //
+
+  if (e.target.nodeName === "BUTTON" && isFavorite) {
+    elem.classList.remove("active");
+
+    const updatedFavorites = userData.favoriteProducts.filter(
+      (product) => product !== id
+    );
+    userData.favoriteProducts = [...updatedFavorites];
+    localStorage.setItem(
+      "favorites",
+      JSON.stringify(userData.favoriteProducts)
+    );
+
+    btnText.innerHTML = "Add to favorite";
   }
 };
 
 export const addEventListeners = () => {
   const list = document.querySelector(".catalog__list");
-  list.addEventListener("click", addFavoriteItem);
+  list.addEventListener("click", toggleFavorite);
 };
