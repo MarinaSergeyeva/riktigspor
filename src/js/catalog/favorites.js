@@ -80,5 +80,5 @@ export const addEventListeners = () => {
   };
 
   list.addEventListener("click", toggleFavorite);
-  mobileNav.addEventListener("click", openMenu);
+  mobileNav?.addEventListener("click", openMenu);
 };

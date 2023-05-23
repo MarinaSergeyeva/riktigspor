@@ -1,19 +1,34 @@
 import userData from "../userData";
+import { loader } from "../components/loader";
 
 export const catalogMarkup = () => {
+  // markup for demo switching between pages
+  let title;
+  if (window.location.pathname === "/") {
+    title = "Catalog";
+  } else if (window.location.pathname === "/contacts") {
+    title = "Contacts";
+  } else if (window.location.pathname === "/profile") {
+    title = "My profile";
+  }
+
   return `<div>
-    <h2 class="catalog__title">Catalog</h2>
+    <h2 class="catalog__title">${title}</h2>
     <ul class="catalog__list">${catalogListMarkup()}</ul>
     </div>`;
 };
 
 const catalogListMarkup = () => {
   const products = userData.allProducts;
-
-  const markup = products.reduce((acc, item) => {
-    acc += cardMarkup(item);
-    return acc;
-  }, "");
+  let markup;
+  if (products.length) {
+    markup = products.reduce((acc, item) => {
+      acc += cardMarkup(item);
+      return acc;
+    }, "");
+  } else {
+    return loader();
+  }
 
   return markup;
 };
