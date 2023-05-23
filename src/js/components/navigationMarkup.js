@@ -6,7 +6,7 @@ export const navigationMarkup = () => {
 
   if (isMobile) {
     markup = `
-      <img src="../../src/images/icons/menu.svg" alt="menu" class="menu" height="50" width="50" />
+      <img src="./src/images/icons/menu.svg" alt="menu" class="menu" height="50" width="50" />
       `;
   } else if (!isMobile) {
     markup = `

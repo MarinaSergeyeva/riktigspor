@@ -13,7 +13,7 @@ const containerHeaderMarkup = () => {
     <div class="container">
       <div class="header__wrapper">
         <a href="/">
-          <img src="../../src/images/logo.svg" alt="main logo" class="logo" height="32" width="80">
+          <img src="./src/images/logo.svg" alt="main logo" class="logo" height="32" width="80">
         </a>
         ${navigationMarkup()}
       </div>
