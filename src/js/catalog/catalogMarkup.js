@@ -2,9 +2,9 @@ import userData from "../userData";
 
 export const catalogMarkup = () => {
   return `<div>
-  <h2 class="catalog__title">Catalog</h2>
-  <ul class="catalog__list">${catalogListMarkup()}</ul>
-  </div>`;
+    <h2 class="catalog__title">Catalog</h2>
+    <ul class="catalog__list">${catalogListMarkup()}</ul>
+    </div>`;
 };
 
 const catalogListMarkup = () => {
