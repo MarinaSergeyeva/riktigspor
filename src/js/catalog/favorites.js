@@ -76,7 +76,7 @@ export const addEventListeners = () => {
   // mobile menu
   const mobileNav = document.querySelector(".menu");
   const openMenu = () => {
-    alert("Here can be your mobile menu");
+    alert("Here can be your mobile menu.");
   };
 
   list.addEventListener("click", toggleFavorite);
