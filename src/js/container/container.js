@@ -4,29 +4,46 @@ import {
   getFavorites,
   showFavorites,
 } from "../catalog/favorites";
+import { navigationMarkup } from "../components/navigationMarkup";
 import { refs } from "../components/refs";
 
 const containerHeaderMarkup = () => {
   return `
-    <header class="header-wrapper"><h2>Header</h2></header>
+  <header class="header">
+    <div class="container">
+      <div class="header__wrapper">
+        <a href="/">
+          <img src="../../src/images/logo.svg" alt="main logo" class="logo" height="32" width="80">
+        </a>
+        ${navigationMarkup()}
+      </div>
+    </div>
+  </header>
     `;
 };
 
 const containerFooterMarkup = () => {
   return `
-    <footer class="footer-wrapper"><h2>Footer</h2></footer>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__wrapper">  
+        <p class="footer__info">Hello! I'm footer and I'll be filled with contacts
+      </div>
+    </div>
+  </footer>
     `;
 };
 
 const containerSectionsMarkup = () => {
   return `
-    <div class="catalog-wrapper">${catalogMarkup()}</div>
-    `;
+  <div class="container">
+    <div class="catalog__wrapper">${catalogMarkup()}</div>
+    </div>`;
 };
 
 export const containerHandler = () => {
-  refs.container.insertAdjacentHTML("afterbegin", containerHeaderMarkup());
-  refs.container.insertAdjacentHTML("beforeend", containerFooterMarkup());
+  refs.container.insertAdjacentHTML("beforebegin", containerHeaderMarkup());
+  refs.container.insertAdjacentHTML("afterend", containerFooterMarkup());
   getFavorites();
   refs.sections.innerHTML = containerSectionsMarkup();
   showFavorites();

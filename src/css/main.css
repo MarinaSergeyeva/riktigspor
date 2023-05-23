@@ -2,3 +2,8 @@
 @import "./base.css";
 
 @import "./sections/catalog.css";
+@import "./sections/header.css";
+@import "./sections/footer.css";
+
+@import "./components/navigation.css";
+@import "./components/loader.css";
