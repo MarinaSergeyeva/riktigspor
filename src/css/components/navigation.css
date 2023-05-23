@@ -8,11 +8,17 @@
 
 .navigation__link {
   text-decoration: none;
+  text-transform: uppercase;
   color: #ffffff;
   font-weight: 600;
+}
+
+.navigation__link[aria-current="page"] {
+  color: rgb(0, 139, 248);
 }
 
 .menu {
   height: 50px;
   width: 50px;
+  /* fill: #008bf8; */
 }
