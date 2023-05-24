@@ -2,7 +2,7 @@ import userData from "../userData.js";
 import { loader } from "../components/loader.js";
 
 export const catalogMarkup = () => {
-  // markup for demo switching between pages
+  // markup for demo switching between pages. Should be updated with real navigation
   let title;
   if (window?.location?.pathname === "/") {
     title = "Catalog";
