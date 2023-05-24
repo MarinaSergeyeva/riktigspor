@@ -4,7 +4,7 @@ import { loader } from "../components/loader.js";
 export const catalogMarkup = () => {
   // markup for demo switching between pages
   let title;
-  if (window.location.pathname === "/") {
+  if (window?.location?.pathname === "/") {
     title = "Catalog";
   } else if (window.location.pathname === "/contacts") {
     title = "Contacts";

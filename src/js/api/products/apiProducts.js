@@ -5,13 +5,16 @@ export const getAllProducts = async () => {
     const response = await fetch("https://dummyjson.com/products?limit=6")
       .then((res) => {
         if (!res.ok) {
-          throw new Error(response.status);
+          throw new Error(`Response is not OK: ${res}`);
         }
         return res.json();
       })
       .then((data) => {
         userData.allProducts = [...data.products];
       })
-      .catch((error) => console.log("error", error));
+      .catch((error) => {
+        console.log("error", error);
+        throw new Error(`Here we have ERROR message: ${error.message}`);
+      });
   }
 };
