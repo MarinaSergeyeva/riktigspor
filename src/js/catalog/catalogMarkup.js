@@ -39,7 +39,7 @@ const cardMarkup = (item) => {
               <img class="product__image" src=${item.thumbnail} alt="product__image" />
               <h3 class="product__title">${item.title}</h3>
               <p class="product__description">${item.description}</p>
-              <p class="product__price">price: ${item.price} NOK</p>
+              <p class="product__price">Price: ${item.price} NOK</p>
               <button class="button product__button" data-id="${item.id}" aria-label="Add to favorite">
                 Add to favorite
               </button>
