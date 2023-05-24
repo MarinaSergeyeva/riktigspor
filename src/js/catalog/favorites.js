@@ -1,4 +1,4 @@
-import userData from "../userData";
+import userData from "../userData.js";
 
 export const getFavorites = () => {
   const localFav = JSON.parse(localStorage.getItem("favorites"));

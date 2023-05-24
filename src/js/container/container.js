@@ -1,11 +1,11 @@
-import { catalogMarkup } from "../catalog/catalogMarkup";
+import { catalogMarkup } from "../catalog/catalogMarkup.js";
 import {
   addEventListeners,
   getFavorites,
   showFavorites,
-} from "../catalog/favorites";
-import { navigationMarkup } from "../components/navigationMarkup";
-import { refs } from "../components/refs";
+} from "../catalog/favorites.js";
+import { navigationMarkup } from "../components/navigationMarkup.js";
+import { refs } from "../components/refs.js";
 
 const containerHeaderMarkup = () => {
   return `

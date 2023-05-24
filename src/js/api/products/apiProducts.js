@@ -1,4 +1,4 @@
-import userData from "../../userData";
+import userData from "../../userData.js";
 
 export const getAllProducts = async () => {
   if (userData.allProducts.length === 0) {

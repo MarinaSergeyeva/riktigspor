@@ -1,5 +1,5 @@
-import userData from "../userData";
-import { loader } from "../components/loader";
+import userData from "../userData.js";
+import { loader } from "../components/loader.js";
 
 export const catalogMarkup = () => {
   // markup for demo switching between pages
