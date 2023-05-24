@@ -1,0 +1,9 @@
+@import "./src/css/normalize.css";
+@import "./src/css/base.css";
+
+@import "./src/css/sections/catalog.css";
+@import "./src/css/sections/header.css";
+@import "./src/css/sections/footer.css";
+
+@import "./src/css/components/navigation.css";
+@import "./src/css/components/loader.css";
